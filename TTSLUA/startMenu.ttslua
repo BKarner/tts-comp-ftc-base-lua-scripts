@@ -313,6 +313,11 @@ DeployZonesData = {
         --[[1]]{type = "circleDeployment", color = "Blue", position = "z", fromCenter = 13, radius = 9},
         --[[2]]{type = "circleDeployment", color = "Black", position = "-x", fromCenter = 16, fromCenterZ = 13, radius = 9},
         --[[3]]{type = "circleDeployment", color = "Yellow", position = "x", fromCenter = 16, fromCenterZ = 13, radius = 9}}},
+    --Asymmetric Missions
+    {name = "(AS) Tip of the Spear", objectivesID = 117, draw = {
+        --[[1]]{type = "line", color = "Green", position = "x", fromCenter = 0},
+        --[[2]]{type = "stepped", color = "Red", position = "x", steps = {{fromSide = 20}, {fromSide = 12}}},
+    }}, -- Need a "FromPoly" where you give it a series of points.
     {name = "None", draw = {type = "none"}},
 }
 
@@ -1222,6 +1227,15 @@ objectivesData = {
             {type = "fixed", pos={0, objectivesOffset, -8}}}},
         {id = 202, name = "(CP) Four Corners", objectives = {}},
         {id = 203, name = "(CP) Three Circles", objectives = {}},
+        -- Asymmetric War
+        {id = 117, name = "Tip of the Spear", objectives = {
+            {type = "fixed", pos={0, objectivesOffset, 0}}, -- center objective
+            {type = "fromSide", pos={14, objectivesOffset, 20}}, -- top-left
+            {type = "fromSide", pos={-14, objectivesOffset, 26}}, -- top-right
+            {type = "fromSide", pos={-12, objectivesOffset, -22}}, -- bottom-left
+            {type = "fromSide", pos={-18, objectivesOffset, -10}}, -- bottom-right
+            {type = "fromSide", pos={0, objectivesOffset, -8}} -- bottom-center
+        }},
         {id = 0, name = "None", objectives = {}},
     }
 
